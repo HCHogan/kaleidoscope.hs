@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 hs-bindgen = { version = "0.9.0", features = ["full", "std"] }
+inkwell = { version = "0.4.0", features = ["llvm12-0"] }
 
 [lib]
 crate-type = ["staticlib"]

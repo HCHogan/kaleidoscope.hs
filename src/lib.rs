@@ -1,3 +1,7 @@
+mod codegen;
+mod token;
+mod ast;
+
 use hs_bindgen::*;
 
 #[hs_bindgen]
