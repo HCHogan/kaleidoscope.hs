@@ -81,6 +81,22 @@ library
 
     -- Other library packages from which modules are imported.
     build-depends:    base
+        , mtl
+        , array
+        , containers
+        , text
+        , string-conversions
+        , directory
+        , process
+        , unix
+        , filepath
+        , bytestring
+        , prettyprinter
+        , pretty-simple
+        -- , llvm-hs-pure >= 9 && < 10
+        -- , llvm-hs-pretty >= 0.9 && < 1
+        , megaparsec
+        , parser-combinators
 
     -- Directories containing source files.
     hs-source-dirs:   src
