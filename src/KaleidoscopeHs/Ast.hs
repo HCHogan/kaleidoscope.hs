@@ -38,4 +38,31 @@ data Expr
   | Id Text -- x
   | Binop Bop Expr Expr -- 1 + 2
   | Unop Uop Expr -- !true
-  | Call Text
+  | Call Text [Expr]
+  | Cast Type Expr -- (int *)malloc(100)
+  | Access Expr Expr -- struct.field
+  | Deref Expr
+  | -- \*p
+    Addr Expr -- &x
+  | Assign Expr Expr -- x = y
+  | Sizeof Type -- sizeof(int)
+  | Noexpr -- used for dangling if
+  deriving (Show, Eq)
+
+data Statement
+  = Expr Expr
+  | Block [Statement]
+  | Return Expr
+  | If Expr Statement Statement
+  | For Expr Expr Expr Statement
+  | While Expr Statement
+  deriving (Show, Eq)
+
+data Type
+  = Pointer Type
+  | TyInt -- i32
+  | TyBool -- true | false
+  | TyChar -- u8
+  | TyVoid -- TODO: add tuple will solve this
+  | TyStruct Text -- struct name
+  deriving (Show, Eq)
