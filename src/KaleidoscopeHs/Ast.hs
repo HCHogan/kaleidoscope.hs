@@ -63,6 +63,19 @@ data Type
   | TyInt -- i32
   | TyBool -- true | false
   | TyChar -- u8
-  | TyVoid -- TODO: add tuple will solve this
+  | TyVoid -- TODO: add tuple and remove this in future
   | TyStruct Text -- struct name
   deriving (Show, Eq)
+
+data Bind = Bind {bindType :: Type, bindName :: Text}
+  deriving (Show, Eq)
+
+data Struct = Struct {structname :: Text, structField :: [Bind]}
+  deriving (Show, Eq)
+
+data Function = Function {typ :: Type, name :: Text, formals :: [Bind], locals :: [Bind], body :: [Statement]}
+  deriving (Show, Eq)
+
+data Program = Program [Struct] [Bind] [Function] deriving (Eq, Show)
+
+
