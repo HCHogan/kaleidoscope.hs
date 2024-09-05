@@ -1,16 +1,16 @@
-module KaleidoscopeHs.Ast () where
+module KaleidoscopeHs.Ast where
 
 import Data.Char (chr)
 import Data.Text (Text)
-import Data.Text.Prettyprint.Doc
 
 -- Binary operator
 data Bop
   = Add
   | Mult
   | Div
-  | -- | Power ** for fun
-    Equal
+  | Power 
+  | Equal
+  | Sub
   | Neq
   | Less
   | Leq
@@ -32,7 +32,7 @@ data Expr
   = Literal Int -- 0 | 42
   | StrLit Text -- "hello
   | CharLit Int -- 'a' as int
-  | Filteral Double -- 0.1 | 4.2
+  | Fliteral Double -- 0.1 | 4.2
   | BoolLit Bool -- true | false
   | Null -- null
   | Id Text -- x
@@ -63,6 +63,7 @@ data Type
   | TyInt -- i32
   | TyBool -- true | false
   | TyChar -- u8
+  | TyFloat
   | TyVoid -- TODO: add tuple and remove this in future
   | TyStruct Text -- struct name
   deriving (Show, Eq)

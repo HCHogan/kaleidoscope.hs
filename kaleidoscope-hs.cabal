@@ -73,6 +73,8 @@ library
         KaleidoscopeHs
         KaleidoscopeHs.Lexer
         KaleidoscopeHs.Ast
+        KaleidoscopeHs.Scanner.Combinator
+        KaleidoscopeHs.Parser.Combinator
 
     -- Modules included in this library but not exported.
     -- other-modules:
