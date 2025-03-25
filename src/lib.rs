@@ -1,11 +1,11 @@
+mod ast;
 mod codegen;
 mod token;
-mod ast;
 
 use hs_bindgen::*;
 
-#[hs_bindgen]
-pub fn add(left: i64, right: i64) -> i64 {
+#[hs_bindgen(add :: CInt -> CInt -> IO (CInt))]
+pub fn add(left: i32, right: i32) -> i32 {
     left + right
 }
 

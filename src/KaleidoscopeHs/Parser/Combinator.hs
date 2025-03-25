@@ -11,7 +11,7 @@ opTable :: [[Operator Parser Expr]]
 opTable =
   [
     [ InfixL $ Access <$ symbol "."
-    , InfixL $ (\lhs rhs -> Access (Deref lhs) rhs) <$ symbol "->"
+    , InfixL $ Access . Deref <$ symbol "->"
     ]
   ,
     [ unary (Unop Neg) "-"

@@ -24,4 +24,4 @@ import Foreign.C.String
 import Foreign.C.Types
 import Foreign.Ptr
 
-foreign import ccall safe "__c_add" add :: CLong -> CLong -> IO (CLong)
+foreign import ccall safe "__c_add" add :: CInt -> CInt -> IO (CInt)
