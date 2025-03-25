@@ -1,4 +1,5 @@
 {-# LANGUAGE PatternSynonyms #-}
+
 module KaleidoscopeHs.TypeChecker.CoreLanguage where
 
 -- expressions:
