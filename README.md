@@ -17,9 +17,11 @@ fn bar(x: Bar, y: i32) -> i32 {
 }
 
 // adhoc polymorphism, pass a dictionary under the hood
-// Show :: Type -> Constraint
-protocol Show self {
-  fn show(self) -> String;
+// Collection :: Type -> Constraint
+protocol Collection c {
+  type Elem;        // use associated type
+  fn empty() -> c;
+  fn insert(e: Elem, c) -> c;
 }
 
 // parametric polymorphism
